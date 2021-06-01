@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet, View, Image, Text, TouchableOpacity } from 'react-native';
-import { theme } from '../core/theme',
+import { theme } from '../core/theme';
 import Unorderedlist from 'react-native-unordered-list';
 
 export default class InformationScreen extends React.Component {
@@ -14,7 +14,7 @@ export default class InformationScreen extends React.Component {
                 <TouchableOpacity onPress={() => this.props.navigation.navigate('WelcomeScreen')}>
                     <Image source={require('../../assets/images/Back.png')} style={styles.backImage}/>
                 </TouchableOpacity>
-                <TouchableOpacity style={styles.skipButtonWrapper} onPress={() => this.props.navigation.navigate('WelcomeScreen')}>
+                <TouchableOpacity style={styles.skipButtonWrapper} onPress={() => this.props.navigation.navigate('DashboardScreen')}>
                     <Text style={styles.skipButton}>Skip</Text>
                 </TouchableOpacity>
             </View>
@@ -26,11 +26,19 @@ export default class InformationScreen extends React.Component {
 
             {/* Description */}
             <View style={styles.descriptionWrapper}>
-                <Text style={styles.descriptionText}>It's about time to take it slow</Text>
+                <Unorderedlist style={styles.descriptionText}>
+                    <Text style={styles.descriptionText}>App blockage</Text>
+                </Unorderedlist>
+                <Unorderedlist style={styles.descriptionText}>
+                    <Text style={styles.descriptionText}>Meditation space</Text>
+                </Unorderedlist>
+                <Unorderedlist style={styles.descriptionText}>
+                    <Text style={styles.descriptionText}>Personal journal writing space</Text>
+                </Unorderedlist>
             </View>
 
             {/* Continue Button */}
-            <TouchableOpacity style={styles.continueButtonWrapper} onPress={() => this.props.navigation.navigate('WelcomeScreen')}>
+            <TouchableOpacity style={styles.continueButtonWrapper} onPress={() => this.props.navigation.navigate('DashboardScreen')}>
                     <Text style={styles.continueButton}>Next</Text>
             </TouchableOpacity>
         </View>
@@ -70,19 +78,21 @@ const styles = StyleSheet.create({
       fontSize: 30
   },
   descriptionWrapper: {
-      marginTop: 49,
-      width: '50%',
+      marginTop: 60,
+      width: '65%',
   },
   descriptionText: {
+      fontFamily: 'DMSansRegular',
       fontWeight: "500",
-      fontSize: 30,
-      textAlign: 'center'
+      fontSize: 20,
+      textAlign: 'left',
+      color: theme.colors.text
   },
   continueButtonWrapper: {
-    marginTop: 54,
+    marginTop: 70,
     backgroundColor: theme.colors.primary,
-    paddingHorizontal: 110,
-    paddingVertical: 18.8,
+    paddingHorizontal: 127,
+    paddingVertical: 16,
     borderRadius: 38
   },
   continueButton: {
