@@ -2,7 +2,11 @@ import * as React from "react";
 import {createStackNavigator} from '@react-navigation/stack';
 import {
     HomeScreen,
-    LoadingScreen
+    LoadingScreen,
+    LoginScreen,
+    WelcomeScreen,
+    RegisterScreen,
+    InformationScreen
   } from '../screens'
 const Stack = createStackNavigator();
 
@@ -21,5 +25,34 @@ export default function Navigation(props) {
               headerShown: false
             }}
             name="HomeScreen" component={HomeScreen} />
+          
+          {/* Login Screen */}
+          <Stack.Screen 
+            options={{
+              headerShown: false
+            }}
+            name="LoginScreen" component={LoginScreen} />
+
+          {/* Welcom Screen */}
+          <Stack.Screen 
+            options={{
+              headerShown: false
+            }}
+            name="WelcomeScreen" component={WelcomeScreen} />
+        
+          {/* Register Screen */}
+          <Stack.Screen 
+            options={{
+              headerShown: false
+            }}
+            name="RegisterScreen" component={RegisterScreen} />
+        
+          {/* Information Screen */}
+          <Stack.Screen 
+            options={{
+              headerShown: false
+            }}
+            name="InformationScreen" component={InformationScreen} />
+    
     </Stack.Navigator>;
 }

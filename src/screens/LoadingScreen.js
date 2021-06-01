@@ -11,7 +11,10 @@ export default class LoadingScreen extends React.Component {
         DMSansBold: require('../../assets/fonts/DMSans-Bold.ttf')
     })
 
-    this.props.navigation.navigate("HomeScreen")
+    this.props.navigation.reset({
+        index: 0,
+        routes: [{ name: 'HomeScreen' }],
+      });
   };
 
   render() {
