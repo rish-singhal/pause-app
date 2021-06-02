@@ -7,7 +7,9 @@ import {
     WelcomeScreen,
     RegisterScreen,
     InformationScreen,
-    DashboardScreen
+    DashboardScreen,
+    JournalHomeScreen,
+    JournalWriteScreen
   } from '../screens'
 const Stack = createStackNavigator();
 
@@ -61,6 +63,20 @@ export default function Navigation(props) {
               headerShown: false
             }}
             name="DashboardScreen" component={DashboardScreen} />
-    
+
+          {/*Journal Home Screen */}
+          <Stack.Screen 
+            options={{
+              headerShown: false
+            }}
+            name="JournalHomeScreen" component={JournalHomeScreen} />
+
+          {/*Journal Write Screen */}
+          <Stack.Screen 
+            options={{
+              headerShown: false
+            }}
+            name="JournalWriteScreen" component={JournalWriteScreen} />
+
     </Stack.Navigator>;
 }

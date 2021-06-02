@@ -36,11 +36,12 @@ export default class DashboardScreen extends React.Component {
                     </TouchableOpacity>
 
                     {/* Journal */}
-                    <TouchableOpacity style={styles.journalUsageTextWrapper}>
+                    <TouchableOpacity style={styles.journalUsageTextWrapper} onPress={() => this.props.navigation.navigate('JournalHomeScreen')}>
                             <Text style={styles.journalUsageText}>Journal</Text>
                     </TouchableOpacity>
                 </View>
                 
+                {/* Home Button */}
                 <TouchableOpacity onPress={() => this.props.navigation.navigate('HomeScreen')}>
                     <Image source={require('../../assets/images/HomeButton.png')} style={styles.homeImage}/>
                 </TouchableOpacity>
@@ -56,7 +57,7 @@ const styles = StyleSheet.create({
     backgroundColor: theme.colors.background,
   },
   upperContainerWrapper: {
-      height: 318,
+      height: 250,
       backgroundColor: '#FFFFFF',
       borderBottomLeftRadius: 32,
       borderBottomRightRadius: 32,
@@ -64,7 +65,7 @@ const styles = StyleSheet.create({
       justifyContent: 'space-around'
   },
   leftUpperContainerWrapper: {
-    marginTop: 141,
+    marginTop: 100,
     width: '40%'
   },
   nameText: {
@@ -82,7 +83,7 @@ const styles = StyleSheet.create({
   rightUpperContainerWrapper: {
       width: 150,
       height: 250,
-      marginTop: 60
+      marginTop: 10
     },
   welcomeTextWrapper: {
     flexDirection: 'row',
